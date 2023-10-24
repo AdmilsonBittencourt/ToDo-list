@@ -1,3 +1,4 @@
+
 .formContainer{
     width: 24rem;
 
@@ -32,6 +33,7 @@
 .formContainer button{
     width: 100%;
     padding-block: .8rem;
+    outline: none;
     border: none;
     border-radius: 5px;
     background-color: aquamarine;
@@ -43,4 +45,8 @@
 .formContainer button:hover{
     background-color: rgb(89, 248, 195);
 
+}
+
+.itemsList{
+    width: 100%;
 }
