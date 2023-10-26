@@ -16,6 +16,7 @@ export function Generator(){
     }
 
     function newItemTextChange(){
+        event.target.setCustomValidity('')
         setItemText(event.target.value) 
     }
 
@@ -24,9 +25,13 @@ export function Generator(){
             return content != contentToDelete;
         })
 
-        console.log(listWhitoutItem)
         setItems(listWhitoutItem)
     }
+
+    function invalidInput(){
+        event.target.setCustomValidity("Campo obrigatorio")
+    }
+
     
     return (
         <div className={style.container}>
@@ -36,9 +41,11 @@ export function Generator(){
                     type="text" 
                     placeholder="Adcionar Item"
                     onChange={newItemTextChange}
+                    onInvalid={invalidInput}
                     value={itemText}
+                    required
                     />
-                <button type="submit">Adcionar</button>
+                <button disabled={itemText.length === 0} type="submit">Adcionar</button>
             </form>
 
             <div className={style.itemsList}>
