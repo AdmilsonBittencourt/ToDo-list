@@ -1,5 +1,5 @@
 import { Generator } from './componentes/generator'
-import './App.css'
+import './global.css'
 
 export function App() {
 
